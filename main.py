@@ -12,7 +12,6 @@ status = ""
 
 @bot.event
 async def on_ready():
-
     print(f"\n {bot.user.name} ready")
     await bot.change_presence(activity=discord.Game(name="with thy mother"))
 
@@ -64,34 +63,11 @@ async def make(ctx, start: discord.Message):
 
     story = f"{start.content}"
     story_slices = []
-    # while message != messages[-1]:
-    #
-    #     if len(story + message.content) >= 2000:
-    #         await ctx.send(f"{story}")
-    #         story = ""
-    #         print("sent 1")
-    #
-    #         TODO if necessary
-    #     # elif len(story + message.content) >= 4000:
-    #     #     while :
-    #     #     await ctx.send(f'{story[i:2000]}')
-    #     #     if
-    #
-    #     story = story + " " + str(message.content)
-    #     print(message.content)
-    #
-    #     i += 1
-    #     message = messages[i]
-    # else:
-    #     await ctx.send(f"{story}")
-    #     print(story)
-    #     print(message.created_at != messages[-2].created_at)
 
     for message in messages:
         print(message.content)
         if message.content[0:2] != "||" and message.content[-2:] != "||":  # removes spoilers
             story = story + " " + message.content
-    print("finished first for loop")
 
     if len(story) > 2000:
         while len(story) > 2000:
@@ -101,33 +77,32 @@ async def make(ctx, start: discord.Message):
     else:
         story_slices.append(story)
         print(len(story))
-    print("finished while loop")
 
     for msg in story_slices:
         print(msg)
         await ctx.send(msg)
-    print("finished final loop")
-    print(len(messages))
 
 
-@bot.command(name='spam', help='prints out random letters randomly | syntax: >spam <number of messages> ')
-async def spam(ctx, amount: int):
-    print(f"{ctx.message.author} used {ctx.message.content}")
+# @bot.command(name='spam', help='prints out random letters randomly | syntax: >spam <number of messages> ')
+# async def spam(ctx, amount: int):
+#     print(f"{ctx.message.author} used {ctx.message.content}")
+#
+#     word = ""
+#
+#     for i in range(0, amount):
+#         val = random.randint(1, 10)
+#         for j in range(0, val):
+#             word = word + chr(random.randint(65, 123))
+#         await ctx.send(word)
+#         word = ""
+#         print(i)
+#
+#
+# @bot.command(name="list", help="sends numbers in ascending order | syntax: >numbers <NO. numbers")
+# async def list(ctx, amount: int):
+#     for i in range(1, amount + 1):
+#         await ctx.send(i)
+#         print(i)
 
-    word = ""
-    for i in range(0, amount):
-        val = random.randint(1, 10)
-        for j in range(0, val):
-            word = word + chr(random.randint(65, 123))
-        await ctx.send(word)
-        word = ""
-        print(i)
-
-
-@bot.command(name="list", help="sends numbers in ascending order | syntax: >numbers <NO. numbers")
-async def list(ctx, amount: int):
-    for i in range(1, amount + 1):
-        await ctx.send(i)
-        print(i)
 
 bot.run(Token)
