@@ -1,0 +1,7 @@
+go to directory with cmd
+git init
+
+heroku git:remote -a <name of application in heroku>
+git add .
+git commit -am "description(?)"
+git push heroku master
