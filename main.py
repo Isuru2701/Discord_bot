@@ -5,7 +5,7 @@ import pdb
 
 intents = discord.Intents.all()
 intents.members = True
-Token = "OTIxMjI3NDU5MTU5MDE5NTYx.Ybv17Q.4kiqZ5FoGQ2nYWiu8mIxXirvwpk"
+Token = "OTIxMjI3NDU5MTU5MDE5NTYx.Ybv17Q.4kiqZ5FoGQ2nYWiu8mIxXirvwpk"  # dm me if u need this
 bot = commands.Bot(command_prefix=">", intents=intents)
 status = ""
 
@@ -103,6 +103,12 @@ async def make(ctx, start: discord.Message):
 #     for i in range(1, amount + 1):
 #         await ctx.send(i)
 #         print(i)
+string = ""
+
+
+async def on_message(ctx):
+    if ctx.content.lower() == "my man":
+        await ctx.send(":horse: :handshake: :horse:")
 
 
 bot.run(Token)
