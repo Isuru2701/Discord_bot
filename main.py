@@ -104,16 +104,14 @@ async def make(ctx, start: discord.Message):
 #     for i in range(1, amount + 1):
 #         await ctx.send(i)
 #         print(i)
-string = ""
 
-
-@bot.event
-async def on_message(message):
-    if message.content.lower() == "my man":
-        await message.channel.send(":horse: :handshake: :horse:")
-
-    if message.content.lower() == "no u":
-        await message.channel.send(":No_U:")
+# @bot.event
+# async def on_message(message):
+#     if message.content.lower() == "my man":
+#         await message.channel.send(":horse: :handshake: :horse:")
+#
+#     if message.content.lower() == "no u":
+#         await message.channel.send(":No_U:")
 
 
 bot.run(Token)
