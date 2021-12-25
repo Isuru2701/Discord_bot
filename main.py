@@ -43,8 +43,8 @@ async def say(ctx, *args):
     text = ""
     for i in args:
         text = text + " " + i
-    await ctx.send(f'{text}')
     await ctx.message.delete()
+    await ctx.send(f'{text}')
 
 
 @bot.command(name="make",
@@ -110,6 +110,9 @@ string = ""
 async def on_message(message):
     if message.content.lower() == "my man":
         await message.channel.send(":horse: :handshake: :horse:")
+
+    if message.content.lower() == "no u":
+        await message.channel.send(":No_U:")
 
 
 bot.run(Token)
