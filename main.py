@@ -55,9 +55,11 @@ async def make(ctx, start: discord.Message):
     print(f"{ctx.message.author} used {ctx.message.content}")
 
     await ctx.send(f"**compiled**\n\ncompiling from <{start.jump_url}>, at {start.created_at}\n\n--------")
+    ctx.message.delete()
 
     messages = await start.channel.history(after=start, before=start.channel.last_message,
                                            oldest_first=True, limit=None).flatten()  # flatten converts to a list
+
     for message in messages:
         print(message.content)
 
