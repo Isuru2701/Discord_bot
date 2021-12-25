@@ -106,9 +106,9 @@ async def make(ctx, start: discord.Message):
 string = ""
 
 
-async def on_message(ctx):
-    if ctx.content.lower() == "my man":
-        await ctx.send(":horse: :handshake: :horse:")
+async def on_message(message):
+    if message.content.lower() == "my man":
+        await message.channel.send(":horse: :handshake: :horse:")
 
 
 bot.run(Token)
