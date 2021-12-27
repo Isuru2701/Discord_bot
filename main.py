@@ -22,9 +22,6 @@ async def ping(ctx):
     await ctx.send(f'{round(bot.latency * 1000)}ms')
 
 
-# @bot.command(name="anchor", help=": set to current channel") --might not need this
-# async def read(ctx):
-
 @bot.command(name="reply", help=': replies to your message  >reply <mention>')
 async def reply(ctx, member: discord.Member = None):
     print(f"{ctx.message.author} used {ctx.message.content}")
