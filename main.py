@@ -81,6 +81,37 @@ async def make(ctx, start: discord.Message):
         await ctx.send(msg)
 
 
+@bot.event
+async def on_message(message):
+    if message.content.lower() == 'real':
+        await message.channel.send('so real')
+
+    elif message.content.lower() == 'my man':
+        await message.channel.send(':horse::handshake::horse:')
+
+    elif message.content.lower() in ["submissive", "ratio", "mommy?", "fruity", "yb better", "toxic", "u fell off",
+                                     "HELP-", "Mid", "banger", "bussy", "oomf", "breedable", "amongus", "alpha male",
+                                     "skksksks", "poggers", "daddy", "stan", "BYE-", "manifest", "who want me?", "skill issue"]:
+
+        await message.channel.send('''
+        submissive  ratio    mommy?
+skill issue       sus
+                    fruity                       yb better
+                                                        simp                 milf
+   toxic                                                                normalize
+  u fell off                                                         HELP-
+Mid                       :man_kneeling::chair:                                      banger
+  bussy                                                             kitten
+          oomf
+breedable                                                thanks its the
+amongus                                                       trauma
+                alpha male                     skksksks
+poggers             daddy            stan   BYE-
+pov      manifest      who want me?    bestie''')
+
+    await bot.process_commands(message)
+
+
 # @bot.command(name='spam', help='prints out random letters randomly | syntax: >spam <number of messages> ')
 # async def spam(ctx, amount: int):
 #     print(f"{ctx.message.author} used {ctx.message.content}")
