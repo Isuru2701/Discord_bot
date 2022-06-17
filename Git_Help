@@ -1,7 +1,7 @@
 go to directory with cmd
 git init
 
-heroku git:remote -a <name of application in heroku> [rurusbot]
+heroku git:remote -a <name of application in heroku> [rurusbot in my case]
 git add .
 git commit -am "description(?)"
 git push heroku master

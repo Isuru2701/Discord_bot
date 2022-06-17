@@ -81,51 +81,34 @@ async def make(ctx, start: discord.Message):
         await ctx.send(msg)
 
 
+@bot.command(name='spam', help='prints out random letters randomly | syntax: >spam <number of messages> ')
+async def spam(ctx, amount: int):
+    print(f"{ctx.message.author} used {ctx.message.content}")
+
+    word = ""
+
+    for i in range(0, amount):
+        val = random.randint(1, 10)
+        for j in range(0, val):
+            word = word + chr(random.randint(65, 123))
+        await ctx.send(word)
+        word = ""
+        print(i)
+
+
+@bot.command(name="list", help="sends numbers in ascending order | syntax: >numbers <NO. numbers")
+async def list(ctx, amount: int):
+    for i in range(1, amount + 1):
+        await ctx.send(i)
+        print(i)
+
 @bot.event
 async def on_message(message):
+    if message.content.lower() == "my man":
+        await message.channel.send(":horse: :handshake: :horse:")
 
-    if "diluc" in message.content.lower():
-        ctx.ban
-
-    if message.content.lower() == 'real':
-        await message.channel.send('so real')
-
-    elif message.content.lower() == 'my man':
-        await message.channel.send(':horse::handshake::horse:')
-
-
-
-    await bot.process_commands(message)
-
-
-# @bot.command(name='spam', help='prints out random letters randomly | syntax: >spam <number of messages> ')
-# async def spam(ctx, amount: int):
-#     print(f"{ctx.message.author} used {ctx.message.content}")
-#
-#     word = ""
-#
-#     for i in range(0, amount):
-#         val = random.randint(1, 10)
-#         for j in range(0, val):
-#             word = word + chr(random.randint(65, 123))
-#         await ctx.send(word)
-#         word = ""
-#         print(i)
-#
-#
-# @bot.command(name="list", help="sends numbers in ascending order | syntax: >numbers <NO. numbers")
-# async def list(ctx, amount: int):
-#     for i in range(1, amount + 1):
-#         await ctx.send(i)
-#         print(i)
-
-# @bot.event
-# async def on_message(message):
-#     if message.content.lower() == "my man":
-#         await message.channel.send(":horse: :handshake: :horse:")
-#
-#     if message.content.lower() == "no u":
-#         await message.channel.send(":No_U:")
+    if message.content.lower() == "no u":
+        await message.channel.send(":No_U:")
 
 
 bot.run(Token)
