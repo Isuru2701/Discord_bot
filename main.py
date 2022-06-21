@@ -110,5 +110,7 @@ async def on_message(message):
     if message.content.lower() == "no u":
         await message.channel.send(":No_U:")
 
+    await bot.process_commands(message) #this command stops the code from blocking any other functions from running
+
 
 bot.run(Token)
