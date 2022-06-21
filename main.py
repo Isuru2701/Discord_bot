@@ -5,7 +5,7 @@ import pdb
 
 intents = discord.Intents.all()
 intents.members = True
-Token = "OTIxMjI3NDU5MTU5MDE5NTYx.Ybv17Q.4kiqZ5FoGQ2nYWiu8mIxXirvwpk"  # dm me if u need this
+Token = "***"  #get this from ur developer portal
 bot = commands.Bot(command_prefix=">", intents=intents)
 status = ""
 
