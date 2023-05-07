@@ -13,7 +13,7 @@ status = ""
 @bot.event
 async def on_ready():
     print(f"\n {bot.user.name} ready")
-    await bot.change_presence(activity=discord.Game(name="with thy mother"))
+    await bot.change_presence(activity=discord.Game(name="writing"))
 
 
 @bot.command(name="ping", help=" : check connection")
