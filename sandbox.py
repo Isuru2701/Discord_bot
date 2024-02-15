@@ -5,7 +5,7 @@ import pdb
 
 intents = discord.Intents.all()
 intents.members = True
-Token = "OTIxMjI3NDU5MTU5MDE5NTYx.Ybv17Q.4kiqZ5FoGQ2nYWiu8mIxXirvwpk" #obtain token from going to ur discord API
+Token = "sugmaballs" #obtain token from going to ur discord API
 bot = commands.Bot(command_prefix="&", intents=intents)
 status = ""
 
